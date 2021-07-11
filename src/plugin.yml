@@ -1,0 +1,9 @@
+name: PvPToggle
+main: me.gabriel.pvptoggle.PvPToggleMain
+version: 1.0
+author: Gabriel
+commands:
+  pvp:
+    description: toggle your pvp.
+    permission: pvptoggle.toggle
+    usage: /<command>
