@@ -57,10 +57,10 @@ public class PvP implements CommandExecutor {
 
 		boolean state;
 
-		if (args[0].toLowerCase() == "toggle") {
+		if (args[0].equalsIgnoreCase("toggle")) {
 			state = !CombatUtil.getPvPToggleState(target);
 		} else {
-			state = args[0].toLowerCase() == "on";
+			state = args[0].equalsIgnoreCase("on");
 		}
 
 		CombatUtil.setPvPToggleState(target, state);
