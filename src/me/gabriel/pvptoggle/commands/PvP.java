@@ -1,6 +1,6 @@
 package me.gabriel.pvptoggle.commands;
 
-import java.util.Arrays;
+import java.util.Set;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -12,6 +12,8 @@ import me.gabriel.pvptoggle.util.CombatUtil;
 import net.md_5.bungee.api.ChatColor;
 
 public class PvP implements CommandExecutor {
+	
+	private static final Set<String> options = Set.of("on", "off", "toggle");
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
@@ -36,9 +38,7 @@ public class PvP implements CommandExecutor {
 			return true;
 		}
 
-		String[] options = { "on", "off", "toggle" };
-
-		if (!(Arrays.asList(options)).contains(args[0].toLowerCase())) {
+		if (!options.contains(args[0].toLowerCase())) {
 			player.sendMessage(usage);
 			return true;
 		}
