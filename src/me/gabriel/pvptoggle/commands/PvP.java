@@ -18,13 +18,13 @@ public class PvP implements CommandExecutor {
 
 		String prefix = CombatUtil.getPrefix();
 
-		if (!(sender.hasPermission("pvptoggle.toggle"))) {
-			sender.sendMessage(prefix + ChatColor.RED + "You lack permission to use this command.");
-			return true;
-		}
-
 		if (!(sender instanceof Player)) {
 			sender.sendMessage(prefix + ChatColor.RED + "This command must be used by a player");
+			return true;
+		}
+		
+		if (!(sender.hasPermission("pvptoggle.toggle"))) {
+			sender.sendMessage(prefix + ChatColor.RED + "You lack permission to use this command.");
 			return true;
 		}
 
