@@ -1,6 +1,7 @@
 package me.gabriel.pvptoggle.util;
 
 import org.bukkit.NamespacedKey;
+import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.persistence.PersistentDataType;
 
@@ -24,6 +25,10 @@ public class CombatUtil {
 
 	public static String getPrefix() {
 		return ChatColor.BLUE + "[" + ChatColor.GRAY + "PvPToggle" + ChatColor.BLUE + "] ";
+	}
+	
+	public static void sendMessage(CommandSender sender, String message) {
+		sender.sendMessage(getPrefix() + message);
 	}
 
 }
